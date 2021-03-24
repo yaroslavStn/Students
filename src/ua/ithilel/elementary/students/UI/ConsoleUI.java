@@ -1,8 +1,12 @@
 package ua.ithilel.elementary.students.UI;
 
+import ua.ithilel.elementary.students.entities.Student;
 import ua.ithilel.elementary.students.util.StudentList;
 
+import java.util.Scanner;
+
 public class ConsoleUI implements StudentUI {
+    private Scanner sc;
 
     public void printHumanList(StudentList studentList) {
         System.out.println("\n" +
@@ -15,4 +19,6 @@ public class ConsoleUI implements StudentUI {
         System.out.println("-----=====----");
 
     }
+
+
 }

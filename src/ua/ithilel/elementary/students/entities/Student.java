@@ -2,7 +2,7 @@ package ua.ithilel.elementary.students.entities;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String name;
     private String surname;
     private int age;
@@ -53,10 +53,14 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Students{" +
-                "name'" + name + '\'' +
-                ", surname'" + surname + '\'' +
-                ", age" + age +
-                '}';
+        return name + " " + surname + ", " + age + " years";
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        if (this.age != o.getAge()) {
+            return this.age - o.getAge();
+        }
+        return this.name.compareTo(o.getName());
     }
 }
